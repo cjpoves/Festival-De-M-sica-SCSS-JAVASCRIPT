@@ -1,0 +1,57 @@
+@use "base/variables";
+@use "base/mixins";
+
+.lineup {
+    background-color: variables.$rosa;
+    h3, .dia {
+        text-align: center;
+        color: variables.$blanco
+    }
+    .dia {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+}
+
+.escenarios-contenedor {
+    @include mixins.contenedor;
+    @include mixins.tablet {
+        @include mixins.grid(2);
+    }
+}
+
+.escenario {
+    .nombre-escenario{
+        padding-top: 2rem;
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+.calendario {
+    @include mixins.resetear-lista;
+
+    li {
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-amarillo {
+    background-color: variables.$amarillo;
+    li:nth-child(odd) {
+        background-color: lighten(variables.$amarillo,10%)
+    }
+}
+
+.bg-verde {
+    background-color: variables.$verde;
+    li:nth-child(odd) {
+        background-color: lighten(variables.$verde,10%)
+    }
+}
